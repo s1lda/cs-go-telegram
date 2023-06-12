@@ -1,6 +1,9 @@
 import telebot
 from telebot import types
-bot = telebot.TeleBot('5622573726:AAFO8fLTSExP6dOek3dIZzKnM0EoHflfxYk')
+from dotenv import load_dotenv
+import os 
+token=os.getenv('TOKEN')
+bot = telebot.TeleBot(token)
 @bot.message_handler(commands=['start'])  # стартовая команда
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
