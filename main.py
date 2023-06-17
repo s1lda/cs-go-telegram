@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os 
 token=os.getenv('TOKEN')
 bot = telebot.TeleBot(token)
-@bot.message_handler(commands=['start'])  # стартовая команда
+@bot.message_handler(commands=['start'])
 def start(message):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton("Mirage")
@@ -24,7 +24,6 @@ def get_text_messages(message):
         btn3 = types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3)
         bot.send_message(message.from_user.id, '👀 Выберите сторону',reply_markup=markup)
-
     elif message.text == '🔙 Вернуться к выбору карты':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton("Mirage")
@@ -33,8 +32,6 @@ def get_text_messages(message):
         markup.add(btn1, btn2, btn3)
         bot.send_message(message.from_user.id, "👋 Вас приветствует бот для игры CS:GO", reply_markup=markup)
         bot.send_message(message.from_user.id, '👀 Выберите карту')
-
-
     #KT MIRAGE
     elif message.text == 'KT Мираж':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -47,7 +44,6 @@ def get_text_messages(message):
         bnt7=types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3, btn4, btn5, btn6,bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
-
     elif message.text == 'Апартаменты на B':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Мираж')
@@ -58,7 +54,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Апартаменты на В 2.jpg', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Апартаменты на В 3.png', 'rb'))
-
     elif message.text == 'Ковры на A':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Мираж')
@@ -69,7 +64,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Ковры на А 2.jpg', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Ковры на А 3.png', 'rb'))
-
     elif message.text == 'Подвал':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Мираж')
@@ -80,8 +74,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Подвал 2.jpg', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Подвал 3.png', 'rb'))
-
-
     elif message.text == 'Рампа на А':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Мираж')
@@ -123,9 +115,6 @@ def get_text_messages(message):
         markup.add(btn1, btn2, btn3, btn4, btn5, btn6)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
     #KT MIRAGE END
-
-
-
     #T MIRAGE
     elif message.text == 'Т Мираж':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -246,9 +235,6 @@ def get_text_messages(message):
         markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn8, btn9, btn10, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
     #t mirage end
-
-
-
     #dust 2
     if message.text == 'Dust 2':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -258,8 +244,6 @@ def get_text_messages(message):
         markup.add(btn1, btn2, btn3)
         bot.send_message(message.from_user.id, '👀 Выберите сторону', reply_markup=markup)
     #kt dust 2
-
-
     elif message.text == 'KT Dust 2':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Двери на длине')
@@ -270,7 +254,6 @@ def get_text_messages(message):
         bnt7 = types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3, btn4, btn5, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
-
     elif message.text == 'Двери на длине':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Dust 2')
@@ -281,7 +264,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Двери на длине 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Двери на длине 3.png', 'rb'))
-
     elif message.text == 'Двойные двери':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Dust 2')
@@ -292,7 +274,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Двойные двери на миде 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Двойные двери на миде 3.png', 'rb'))
-
     elif message.text == 'Туннель с мида':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Dust 2')
@@ -303,8 +284,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Туннель с мида 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Туннель с мида 3.png', 'rb'))
-
-
     elif message.text == 'Шорт вблизи':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Dust 2')
@@ -336,8 +315,6 @@ def get_text_messages(message):
         markup.add(btn1, btn2, btn3, btn4, btn5, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
     # kt dust 2 end
-
-
     #t dust 2
     elif message.text == 'Т Dust 2':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -350,7 +327,6 @@ def get_text_messages(message):
         bnt7 = types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3, btn4, btn5,btn6, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
-
     elif message.text == 'Глубокий смок на КТ':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за Т Dust 2')
@@ -361,7 +337,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Глубокий смок на КТ 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Глубокий смок на КТ 3.png', 'rb'))
-
     elif message.text == 'Дверь на B':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за Т Dust 2')
@@ -372,7 +347,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Дверь на В 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Дверь на В 3.png', 'rb'))
-
     elif message.text == 'Иксбокс':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за Т Dust 2')
@@ -384,8 +358,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Иксбокс 3.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Иксбокс 4.png', 'rb'))
-
-
     elif message.text == 'Окно на B':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за Т Dust 2')
@@ -428,8 +400,6 @@ def get_text_messages(message):
         markup.add(btn1, btn2, btn3, btn4, btn5, btn6, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
     # T DUST 2 END
-
-
     # Inferno
     if message.text == 'Inferno':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -438,7 +408,6 @@ def get_text_messages(message):
         btn3 = types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3)
         bot.send_message(message.from_user.id, '👀 Выберите сторону', reply_markup=markup)
-
     elif message.text == 'KT Inferno':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('Банан')
@@ -447,7 +416,6 @@ def get_text_messages(message):
         bnt7 = types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
-
     elif message.text == 'Банан':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Inferno')
@@ -458,7 +426,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Банан 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Банан 3.png', 'rb'))
-
     elif message.text == 'Мид':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Inferno')
@@ -469,7 +436,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Мид 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Мид 3.png', 'rb'))
-
     elif message.text == 'Рампа':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за КТ Inferno')
@@ -491,8 +457,6 @@ def get_text_messages(message):
         markup.add(btn1, btn2, btn3, btn4, btn5, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
      #KT INFERNO END
-
-
     #T INFERNO
     elif message.text == 'T Inferno':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -506,7 +470,6 @@ def get_text_messages(message):
         bnt7 = types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3,btn4,btn5,btn6,btn8,bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
-
     elif message.text == 'Библиотека':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за Т Inferno')
@@ -517,7 +480,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Библиотека 2.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Библиотека 3.png', 'rb'))
-
     elif message.text == 'Гробы':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за Т Inferno')
@@ -529,7 +491,6 @@ def get_text_messages(message):
         bot.send_photo(message.from_user.id, photo=open('Гробы 3.png', 'rb'))
         bot.send_message(message.from_user.id, "Куда прилетит")
         bot.send_photo(message.from_user.id, photo=open('Гробы 4.png', 'rb'))
-
     elif message.text == 'Заход в плент B':
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton('🔙 Позиции за Т Inferno')
@@ -592,6 +553,4 @@ def get_text_messages(message):
         bnt7 = types.KeyboardButton('🔙 Вернуться к выбору карты')
         markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn8, bnt7)
         bot.send_message(message.from_user.id, 'Выберите позицию', reply_markup=markup)
-
-
 bot.polling(none_stop=True, interval=0)
